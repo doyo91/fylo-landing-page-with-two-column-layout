@@ -24,6 +24,7 @@ body {
   font-family: var(--font--primary);
   color: var(--primary-dark-blue);
   font-size: 16px;
+  max-width: 1440px;
 }
 
 h1,
@@ -70,6 +71,7 @@ a {
   font-family: var(--font-secondary);
   font-weight: bold;
   font-size: 11px;
+  cursor: pointer;
 }
 
 .form__input--header {
@@ -110,6 +112,7 @@ a {
 .navbar__item:last-child {
   margin-right: 0;
 }
+
 /*
 ===============================
   Header  
@@ -126,7 +129,7 @@ a {
 .header__title {
   margin-top: 15px;
   line-height: 1.4;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -135,7 +138,7 @@ a {
   line-height: 1.4;
   margin-top: 10px;
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: 13px;
 }
 /*
 ===============================
@@ -156,7 +159,7 @@ a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  top: -70px;
+  top: -60px;
   left: 0;
   width: 100%;
   height: 100px;
@@ -210,7 +213,7 @@ a {
 .testimonial {
   width: 280px;
   margin: auto;
-  background-color: var((--white));
+  background-color: var(--white);
   padding: 20px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 26px -10px rgba(181, 181, 181, 1);
@@ -288,6 +291,8 @@ a {
 .foo__logo {
   width: 100px;
   object-fit: contain;
+  filter: grayscale(100%) invert(100%) contrast(0%) brightness(200%);
+  color: white;
 }
 
 .foo__contact {
@@ -335,5 +340,202 @@ a {
 ===============================
 */
 
+@media screen and (min-width: 600px) {
+  .s1::before {
+    background-image: url(images/bg-curve-desktop.svg);
+  }
+}
 @media screen and (min-width: 768px) {
+  .form--header {
+    display: flex;
+    flex-direction: row;
+  }
+  .form__btn {
+    max-width: 200px;
+  }
+  .form__input--header {
+    border: 1px solid var(--primary-dark-blue);
+    flex: 0.6;
+  }
+  .form__btn--header {
+    font-size: 11px;
+    margin-left: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+    flex: 0.4;
+  }
+  /*
+===============================
+  Navbar  
+===============================
+*/
+  .navbar {
+    font-size: 14px;
+    height: auto;
+    padding: 60px;
+  }
+
+  .navbar__logo {
+    width: 150px;
+  }
+
+  /*
+===============================
+  Header  
+===============================
+*/
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content illustration";
+    column-gap: 20px;
+    text-align: left;
+    align-items: center;
+  }
+  .header__content {
+    grid-area: content;
+    max-width: 700px;
+    padding: 30px;
+  }
+  .header__title {
+    margin-bottom: 0;
+    padding: 10px;
+    font-size: 36px;
+  }
+
+  .header__text {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-right: 100px;
+    grid-area: text;
+  }
+  .header .form__input {
+    flex: 0.5;
+  }
+
+  .header .form__btn {
+    flex: 0.3;
+  }
+  /*
+===============================
+  Section 1  
+===============================
+*/
+  .s1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "content illustration";
+    column-gap: 20px;
+    align-items: center;
+    margin-top: 200px;
+  }
+  .s1::before {
+    background-image: url(images/bg-curve-desktop.svg);
+    background-size: 100%;
+    background-position: top;
+    top: -80px;
+  }
+  .s1__content {
+    grid-area: content;
+    padding: 50px 30px;
+    width: 120%;
+  }
+
+  .s1__illustration {
+    grid-area: illustration;
+    width: 70%;
+    margin-left: auto;
+    margin-right: 20px;
+    padding-top: 50;
+  }
+
+  .s1__title {
+    text-align: left;
+    font-size: 36px;
+    margin-top: 0px;
+  }
+  .s1__text {
+    font-size: 14px;
+    color: var(--primary-desaturated-blue);
+    margin-bottom: 15px;
+    padding-right: 220px;
+  }
+  .s1__works {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .testimonial {
+    margin: 0;
+    margin-right: auto;
+  }
+
+  /*
+===============================
+  Section 2  
+===============================
+*/
+  .s2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding-top: 60px;
+    gap: 300px;
+    padding: 60px;
+  }
+  .s2__title {
+    font-size: 1.5rem;
+  }
+
+  .s2 .form__input {
+    width: 500px;
+  }
+  .s2 .form__btn {
+    width: 150px;
+  }
+  /*
+===============================
+  Footer  
+===============================
+*/
+  .foo {
+    padding: 60px;
+  }
+  .foo__content {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+    grid-template-areas: "contact links-1 links-2 social";
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .foo__logo {
+    grid-area: logo;
+    margin-bottom: 10px;
+  }
+
+  .foo__contact {
+    grid-area: contact;
+    padding-top: 10px;
+    margin: 0;
+  }
+
+  .foo__list:first-child {
+    grid-area: links-1;
+  }
+  .foo__list:nth-child(1) {
+    grid-area: links-2;
+  }
+
+  .foo__social {
+    grid-area: social;
+    padding-top: 10px;
+    margin: 0;
+  }
 }
